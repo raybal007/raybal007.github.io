@@ -1,0 +1,102 @@
+:root {
+  --bg: #fbfaf7;
+  --surface: #ffffff;
+  --ink: #1c1b19;
+  --muted: #5f5c55;
+  --rule: #e4e0d8;
+  --accent: #1f4e79;
+  --accent-soft: #e8eef5;
+  --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --sans: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161615;
+    --surface: #1e1e1c;
+    --ink: #ecebe7;
+    --muted: #a8a59d;
+    --rule: #34332f;
+    --accent: #8db8e3;
+    --accent-soft: #23303d;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1.075rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+
+.wrap { max-width: 50rem; margin: 0 auto; padding: 0 1rem; }
+
+/* Header */
+.site-header {
+  position: sticky; top: 0; z-index: 10;
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--rule);
+}
+.header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 3.5rem; flex-wrap: wrap; }
+.site-name { font-family: var(--sans); font-weight: 600; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
+nav { display: flex; gap: 1.25rem; font-family: var(--sans); font-size: 0.9rem; }
+nav a { color: var(--muted); text-decoration: none; }
+nav a:hover { color: var(--accent); }
+
+/* Intro */
+.intro { display: grid; grid-template-columns: 11rem 1fr; gap: 2.25rem; align-items: start; padding: 3.5rem 0 1rem; }
+.photo { width: 11rem; height: 11rem; border-radius: 50%; object-fit: cover; display: block; }
+h1 { font-weight: 600; font-size: 2.3rem; line-height: 1.15; margin: 0 0 0.75rem; letter-spacing: -0.01em; }
+.lede { font-size: 1.2rem; color: var(--ink); margin-top: 0; }
+.links { list-style: none; padding: 0; margin: 1.25rem 0 0; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; font-family: var(--sans); font-size: 0.92rem; font-weight: 500; }
+
+/* Sections */
+section { padding-top: 2.5rem; }
+h2 {
+  font-family: var(--sans); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.09em;
+  color: var(--muted); border-bottom: 1px solid var(--rule); padding-bottom: 0.5rem; margin: 0 0 1.5rem;
+}
+.h2-sub { margin-top: 2.5rem; }
+
+.paper { margin-bottom: 2rem; }
+.paper h3 { font-size: 1.22rem; font-weight: 600; line-height: 1.35; margin: 0; }
+.paper p { margin: 0.5rem 0 0; }
+.meta { font-family: var(--sans); font-size: 0.85rem; color: var(--muted); }
+.actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.9rem !important; }
+.btn {
+  font-family: var(--sans); font-size: 0.85rem; font-weight: 500; text-decoration: none;
+  padding: 0.35rem 0.8rem; border-radius: 6px; background: var(--accent-soft); color: var(--accent);
+}
+.btn:hover { text-decoration: underline; }
+
+.entries { list-style: none; padding: 0; margin: 0; }
+.entries li { display: grid; grid-template-columns: 7.5rem 1fr; gap: 1rem; margin-bottom: 1.4rem; }
+.when { font-family: var(--sans); font-size: 0.85rem; color: var(--muted); padding-top: 0.2rem; font-variant-numeric: tabular-nums; }
+.entries p { margin: 0; }
+.entries p + p { margin-top: 0.3rem; color: var(--muted); font-size: 1rem; }
+.role { font-weight: 600; }
+.org { display: block; font-weight: 400; font-style: italic; color: var(--muted); }
+
+.site-footer { border-top: 1px solid var(--rule); margin-top: 3rem; padding-top: 1.25rem; padding-bottom: 2.5rem; font-family: var(--sans); font-size: 0.85rem; color: var(--muted); }
+
+/* Phones */
+@media (max-width: 640px) {
+  body { font-size: 1.02rem; }
+  .intro { grid-template-columns: 1fr; gap: 1.25rem; padding-top: 2rem; }
+  .photo { width: 7.5rem; height: 7.5rem; }
+  h1 { font-size: 1.9rem; }
+  nav { gap: 0.9rem; }
+  .entries li { grid-template-columns: 1fr; gap: 0.15rem; }
+  .header-inner { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+}
