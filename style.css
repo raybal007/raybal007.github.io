@@ -58,7 +58,9 @@ nav a:hover { color: var(--accent); }
 .intro { display: grid; grid-template-columns: 11rem 1fr; gap: 2.25rem; align-items: start; padding: 3.5rem 0 1rem; }
 .photo { width: 11rem; height: 11rem; border-radius: 50%; object-fit: cover; display: block; }
 h1 { font-weight: 600; font-size: 2.3rem; line-height: 1.15; margin: 0 0 0.75rem; letter-spacing: -0.01em; }
-.lede { font-size: 1.2rem; color: var(--ink); margin-top: 0; }
+.lede { font-size: 1.2rem; color: var(--ink); margin: 0; }
+.fields { font-family: var(--sans); font-size: 0.9rem; color: var(--muted); margin: 0.6rem 0 1rem; }
+.fields span { font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.75rem; margin-right: 0.5rem; }
 .links { list-style: none; padding: 0; margin: 1.25rem 0 0; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; font-family: var(--sans); font-size: 0.92rem; font-weight: 500; }
 
 /* Sections */
@@ -81,7 +83,7 @@ h2 {
 .btn:hover { text-decoration: underline; }
 
 .entries { list-style: none; padding: 0; margin: 0; }
-.entries li { display: grid; grid-template-columns: 7.5rem 1fr; gap: 1rem; margin-bottom: 1.4rem; }
+.entries li { display: grid; grid-template-columns: 7.5rem 1fr; gap: 1rem; margin-bottom: 1rem; }
 .when { font-family: var(--sans); font-size: 0.85rem; color: var(--muted); padding-top: 0.2rem; font-variant-numeric: tabular-nums; }
 .entries p { margin: 0; }
 .entries p + p { margin-top: 0.3rem; color: var(--muted); font-size: 1rem; }
